@@ -9,3 +9,15 @@ export const renameKeys = R.curry((keysMap, obj) =>
     R.keys(obj)
   )
 )
+
+export const spreadPath = R.curryN(
+  2,
+  R.converge(R.merge, [R.dissocPath, R.pathOr({})])
+)
+
+export const parseQs = R.compose(
+  R.fromPairs,
+  R.map(R.split('=')),
+  R.split('&'),
+  R.tail
+)

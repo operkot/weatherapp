@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 
+import { locationActions } from 'store/location/location.slice'
 import { autocompleteActions } from 'store/autocomplete/autocomplete.slice'
 import {
   getFormatedSuggestions,
@@ -19,7 +20,7 @@ export const Searchbox = () => {
 
   const onChange = (data, { action }) => {
     if (action === 'select-option') {
-      console.log(data)
+      disptch(locationActions.detectByID(data.value))
     }
 
     if (action === 'clear') {

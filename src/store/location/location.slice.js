@@ -12,15 +12,14 @@ const locationSlice = createSlice({
   initialState,
   reducers: {
     detectByIP(state) {
-      return state
+      state.loading = true
+      state.error = null
     },
     detectByID(state) {
-      return state
+      state.loading = true
+      state.error = null
     },
     detectByName(state) {
-      return state
-    },
-    detectPending(state) {
       state.loading = true
       state.error = null
     },

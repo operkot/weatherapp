@@ -13,11 +13,10 @@ import {
 import { isEmptyStr } from 'utils/common.utils'
 
 function* detectLocationByIp() {
-  yield put(locationActions.detectPending())
-
   try {
     const response = yield fetchLocationByIP()
     const normalizedData = normalizeIPDetectionData(response)
+
     yield put(locationActions.detectSuccess(normalizedData))
   } catch (error) {
     yield put(locationActions.detectFailure(error))
@@ -27,11 +26,10 @@ function* detectLocationByIp() {
 function* detectLocationById({ payload }) {
   if (isEmptyStr(payload)) return
 
-  yield put(locationActions.detectPending())
-
   try {
     const response = yield fetchLocationByID(payload)
     const normalizedData = normalizeIdDetectionData(response)
+
     yield put(locationActions.detectSuccess(normalizedData))
   } catch (error) {
     yield put(locationActions.detectFailure(error))
@@ -41,11 +39,10 @@ function* detectLocationById({ payload }) {
 function* detectLocationByName({ payload }) {
   if (isEmptyStr(payload)) return
 
-  yield put(locationActions.detectPending())
-
   try {
     const response = yield fetchLocationByName(payload)
     const normalizedData = normalizeIdDetectionData(response)
+
     yield put(locationActions.detectSuccess(normalizedData))
   } catch (error) {
     yield put(locationActions.detectFailure(error))

@@ -1,8 +1,10 @@
-import { Layout } from 'components'
+import { Layout, Searchbox } from 'components'
 
 const App = () => (
   <Layout>
-    <Layout.Main>App main container</Layout.Main>
+    <Layout.Main>
+      <Searchbox />
+    </Layout.Main>
     <Layout.Side>App side container</Layout.Side>
   </Layout>
 )

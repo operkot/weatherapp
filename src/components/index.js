@@ -1,3 +1,5 @@
 export { Layout } from './Layout/Layout'
+export { Preloader } from './Preloader/Preloader'
 export { Searchbox } from './Searchbox/Searchbox'
 export { Locationbox } from './Locationbox/Locationbox'
+export { Weatherbox } from './Weatherbox/Weatherbox'

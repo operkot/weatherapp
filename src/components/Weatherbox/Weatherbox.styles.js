@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { WeatherIcon } from './Weatherbox.icons'
 
 export const WeatherboxWrapper = styled.div`
   min-height: 162px;
@@ -29,5 +30,17 @@ export const WeatherboxListItem = styled.li`
     content: '|';
     padding-right: 4px;
     padding-left: 4px;
+  }
+`
+
+export const WeatherboxIcon = styled.img`
+  width: 100%;
+  max-width: 74px;
+  max-height: 74px;
+  margin-right: auto;
+  margin-left: auto;
+
+  &:not(:last-child) {
+    margin-bottom: 0.5rem;
   }
 `
